@@ -3,7 +3,52 @@
   padding: 0px;
   box-sizing: border-box;
 }
-
+html {
+  font-size: 62.5%;
+}
 body {
   font-family: "Inter", sans-serif;
+}
+
+header {
+  display: flex;
+  height: 10vh;
+  width: 90%;
+  margin: auto;
+  align-items: center;
+}
+
+.logo-container,
+.nav-links,
+.cart {
+  display: flex;
+}
+
+.logo-container {
+  flex: 1;
+  flex-wrap: nowrap;
+}
+
+.logo {
+  font-weight: 400;
+  margin: 10px;
+  font-size: 1.8rem;
+}
+nav {
+  flex: 2;
+}
+
+.nav-links {
+  justify-content: space-around;
+  list-style: none;
+}
+
+.nav-link > a {
+  color: #5f5f79;
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+.cart {
+  flex: 1;
+  justify-content: flex-end;
 }
