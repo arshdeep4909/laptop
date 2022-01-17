@@ -6,10 +6,25 @@
 html {
   font-size: 62.5%;
 }
-body {
+body,
+button {
   font-family: "Inter", sans-serif;
 }
 
+@keyframes drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/*
+ styling the header section 
+ */
 header {
   display: flex;
   height: 10vh;
@@ -51,4 +66,153 @@ nav {
 .cart {
   flex: 1;
   justify-content: flex-end;
+}
+
+/* 
+Styling the main body section 
+*/
+
+.presentation {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  min-height: 80vh;
+  align-items: center;
+}
+
+.introduction {
+  /* flex: 1; */
+}
+.intro-text h1 {
+  font-size: 4.4rem;
+  font-weight: 500;
+  background: linear-gradient(to right, #494964, #6f6f89);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.intro-text p {
+  margin: 5px;
+  font-size: 2.2rem;
+}
+.cta {
+  margin: 50px 0 0 0;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.cta__button {
+  font-size: 1.6rem;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+}
+.cta-select {
+  border: 2px solid #c36cbb;
+  background: transparent;
+  color: #c36cbb;
+  margin: 30px;
+}
+
+.cta-add {
+  background: #c36cbb;
+  border: none;
+  margin: 30px;
+  color: white;
+}
+.cta-select:hover {
+  background: #c36cbb;
+  color: white;
+}
+.cta-add:hover {
+  background: white;
+  color: #c36cbb;
+  border: 2px solid #c36cbb;
+}
+/* ---------------------SECOND PART -----------------*/
+.cover {
+  display: flex;
+  flex: 1;
+  height: 60vh;
+  justify-content: center;
+}
+.cover img {
+  height: 100%;
+
+  filter: drop-shadow(0px 5px 3px black);
+  animation: drop 1.5s ease;
+}
+
+.big-circle {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: -1;
+  opacity: 0.5;
+  height: 80%;
+}
+
+.medium-circle {
+  position: absolute;
+  top: 30%;
+  right: 30%;
+  z-index: -1;
+  height: 60%;
+  opacity: 0.4;
+}
+
+.small-circle {
+  position: absolute;
+  bottom: 0%;
+  left: 20%;
+  z-index: -1;
+}
+
+.laptop-select {
+  position: absolute;
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+  right: 20%;
+}
+
+/* adding all media querries here  */
+
+@media screen and (max-width: 1024px) {
+  .presentation {
+    flex-direction: column;
+  }
+
+  /* ---------------------FIRST PART -----------------*/
+  .introduction {
+    margin-top: 5vh;
+    text-align: center;
+  }
+  .cta {
+    justify-content: center;
+    padding: 10px 0 0 0;
+  }
+  .intro-text h1 {
+    font-size: 3re;
+  }
+  .intro-text p {
+    font-size: 1.8rem;
+  }
+  .laptop-select {
+    bottom: 5%;
+    right: 50%;
+    width: 50%;
+    transform: translate(50%, 5%);
+  }
+  .cover img {
+    height: 80%;
+    width: 100%;
+  }
+  .small-circle,
+  .big-circle,
+  .medium-circle {
+    opacity: 0.2;
+  }
+  .laptop-select {
+    position: static;
+  }
 }
